@@ -9,14 +9,15 @@ import {
   IconShield,
   IconWhatsApp,
 } from "@/components/Icons";
-import { clients, site, whatsappLink } from "@/lib/site";
+import { clientLogos } from "@/lib/clients";
+import { site, whatsappLink } from "@/lib/site";
 
 const services = [
   {
     icon: IconNetwork,
     title: "Infraestrutura e redes",
-    text: "Servidores, máquinas virtuais, Active Directory, DHCP e rede estruturada, configurados para a empresa trabalhar sem fila de reclamação.",
-    tags: ["Firewall", "Active Directory", "DHCP", "VMs"],
+    text: "Máquinas, servidores, e-mails, máquinas virtuais, Active Directory, DHCP e rede estruturada, configurados para a empresa trabalhar sem fila de reclamação.",
+    tags: ["Servidores", "Active Directory", "E-mail", "VMs"],
   },
   {
     icon: IconShield,
@@ -38,14 +39,14 @@ const services = [
   },
   {
     icon: IconCode,
-    title: "Sistemas e sites sob medida",
-    text: "Páginas de sistema, sites institucionais e ferramentas internas feitas para o processo da sua empresa, não o contrário.",
-    tags: ["Sistemas web", "Sites", "Painéis"],
+    title: "Sistemas, sites e presença digital",
+    text: "Sites, lojas virtuais, SEO e campanhas no Google Ads, além de páginas de sistema e dashboards feitos para o processo da sua empresa, não o contrário.",
+    tags: ["Sites", "SEO", "Google Ads", "Dashboards"],
   },
   {
     icon: IconFlow,
     title: "Automação e atendimento",
-    text: "Fluxos com n8n e atendimento centralizado com Chatwoot personalizado, para tirar tarefa repetitiva do dia da equipe.",
+    text: "Fluxos com n8n e software de atendimento personalizado com Chatwoot, para tirar tarefa repetitiva do dia da equipe.",
     tags: ["n8n", "Chatwoot", "Integrações"],
   },
 ];
@@ -71,25 +72,46 @@ const steps = [
 
 const cases = [
   {
-    company: "Móveis Imperador",
-    segment: "Varejo de móveis",
-    title: "ERP, marketplace e loja virtual no mesmo fluxo",
-    text: "Gestão do ERP Bling, integração com o marketplace do Magalu e manutenção do site de e-commerce, mantendo catálogo e pedidos alinhados entre os canais.",
-    result: "Menos digitação duplicada e um só lugar para acompanhar vendas.",
+    company: "Móveis Imperador e Móveis ponto móveis",
+    segment: "Fabricação e venda de bancos de jardim",
+    title: "Loja virtual e ERP Bling para quem fabrica e vende",
+    text: "Criação da loja virtual e gestão do ERP Bling, com integração ao marketplace do Magalu, para as duas marcas de bancos de jardim.",
+    result: "Vendas online e gestão da operação conectadas ao mesmo ERP.",
+  },
+  {
+    company: "Div Design",
+    segment: "Divisórias de alto padrão",
+    title: "TI completa, dashboards e presença digital",
+    text: "Servidor, máquinas virtuais, backup, rede e firewall, mais sistemas sob medida como dashboards, instalação de CFTV, Google Ads, SEO e o site.",
+    result: "Da infraestrutura ao marketing digital com um único responsável.",
+  },
+  {
+    company: "Umani Portas",
+    segment: "Portas hospitalares",
+    title: "O mesmo modelo de TI aplicado a outra fábrica",
+    text: "Infraestrutura, segurança, backup, sistemas, CFTV, Google Ads, SEO e site, seguindo o padrão da Div Design e adaptado à operação de portas hospitalares.",
+    result: "Ambientes padronizados entre as duas indústrias.",
+  },
+  {
+    company: "Telhadão & Cia",
+    segment: "Material de construção",
+    title: "Máquinas, e-mails e servidores sob controle",
+    text: "Cuidado da infraestrutura de máquinas, e-mails e servidores da loja, mantendo a operação do dia a dia funcionando.",
+    result: "Um único responsável quando algo para.",
   },
   {
     company: "Ssousa Contabilidade",
     segment: "Serviços contábeis",
-    title: "Atendimento centralizado com Chatwoot personalizado",
-    text: "Personalização do Chatwoot para o jeito de atender do escritório, além do desenvolvimento e da manutenção do site.",
-    result: "Conversas de clientes organizadas e equipe respondendo no mesmo painel.",
+    title: "Site e atendimento com Chatwoot personalizado",
+    text: "Desenvolvimento do site e personalização do Chatwoot, um software de atendimento, para o jeito de atender do escritório.",
+    result: "Conversas de clientes organizadas no mesmo painel.",
   },
   {
-    company: "Div Design, Umaniportas e Telhadão",
-    segment: "Indústria e material de construção",
-    title: "Infraestrutura completa, do servidor à câmera",
-    text: "Responsabilidade por rede, firewall, Active Directory, DHCP, máquinas virtuais, backup, licenças, CFTV e ERP, além de páginas de sistema sob medida.",
-    result: "Ambiente padronizado, documentado e com quem resolver quando algo para.",
+    company: "Mobinc",
+    segment: "Pesquisa de mercado",
+    title: "Site para uma empresa de pesquisa de mercado",
+    text: "Criação do site institucional da Mobinc, apresentando a empresa e seus serviços de pesquisa.",
+    result: "Site próprio para apresentar a empresa a novos clientes.",
   },
 ];
 
@@ -108,7 +130,7 @@ const jsonLd = {
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    addressLocality: site.city,
+    ...(site.city ? { addressLocality: site.city } : {}),
     addressRegion: site.region,
     addressCountry: "BR",
   },
@@ -122,8 +144,9 @@ const jsonLd = {
     "Integração de ERP Bling e marketplaces",
     "Automação com n8n",
     "Chatwoot",
+    "SEO e Google Ads",
   ],
-  sameAs: [site.instagram, site.linkedin],
+  sameAs: [site.instagram, site.linkedin].filter(Boolean),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Serviços de T.I",
@@ -310,21 +333,34 @@ export default function Home() {
         <section className="proof" aria-labelledby="proof-titulo">
           <div className="container">
             <h2 id="proof-titulo" className="proof__title">
-              Ambientes onde a T.I Pro já opera
+              Empresas que já confiam a TI à T.I Pro
             </h2>
           </div>
           <div className="marquee">
             <div className="marquee__track">
-              <ul className="marquee__list">
-                {clients.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-              <ul className="marquee__list" aria-hidden="true">
-                {clients.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
+              {[false, true].map((dup) => (
+                <ul
+                  key={String(dup)}
+                  className="marquee__list"
+                  aria-hidden={dup || undefined}
+                  aria-label={dup ? undefined : "Clientes"}
+                >
+                  {clientLogos.map((c) => (
+                    <li key={c.key}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={c.src}
+                        alt={dup ? "" : `Logo da ${c.name}`}
+                        width={c.w}
+                        height={c.h}
+                        loading="lazy"
+                        decoding="async"
+                        style={{ height: c.dh, width: "auto" }}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              ))}
             </div>
           </div>
         </section>
@@ -364,15 +400,15 @@ export default function Home() {
               <dl className="seg">
                 <div>
                   <dt>Indústria</dt>
-                  <dd>Div Design, Umaniportas</dd>
+                  <dd>Div Design (divisórias), Umani Portas (portas hospitalares)</dd>
                 </div>
                 <div>
-                  <dt>Varejo</dt>
-                  <dd>Telhadão, Móveis Imperador</dd>
+                  <dt>Fabricação e varejo</dt>
+                  <dd>Móveis Imperador e Móveis ponto móveis (bancos de jardim), Telhadão & Cia (material de construção)</dd>
                 </div>
                 <div>
                   <dt>Serviços</dt>
-                  <dd>Ssousa Contabilidade</dd>
+                  <dd>Ssousa Contabilidade, Mobinc (pesquisa de mercado), SDC Treinamentos (aulas de inglês)</dd>
                 </div>
               </dl>
               <p className="about__note">
@@ -496,7 +532,9 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <div className="container footer__grid">
+        <div
+          className={`container footer__grid${site.instagram || site.linkedin ? "" : " footer__grid--3"}`}
+        >
           <div>
             <a className="logo" href="#inicio" aria-label="T.I Pro, voltar ao início">
               <span className="logo__mark" aria-hidden="true">
@@ -538,27 +576,35 @@ export default function Home() {
                   {site.phoneDisplay}
                 </a>
               </li>
-              <li>
-                {site.city}, {site.region}
-              </li>
+              {site.city ? (
+                <li>
+                  {site.city}, {site.region}
+                </li>
+              ) : null}
             </ul>
           </div>
 
-          <div>
-            <h2 className="footer__h">Redes</h2>
-            <ul>
-              <li>
-                <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
+          {site.instagram || site.linkedin ? (
+            <div>
+              <h2 className="footer__h">Redes</h2>
+              <ul>
+                {site.instagram ? (
+                  <li>
+                    <a href={site.instagram} target="_blank" rel="noopener noreferrer">
+                      Instagram
+                    </a>
+                  </li>
+                ) : null}
+                {site.linkedin ? (
+                  <li>
+                    <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+                      LinkedIn
+                    </a>
+                  </li>
+                ) : null}
+              </ul>
+            </div>
+          ) : null}
         </div>
         <div className="container footer__legal">
           <p>

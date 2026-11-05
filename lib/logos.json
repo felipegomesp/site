@@ -1,0 +1,58 @@
+[
+  {
+    "key": "moveis-imperador",
+    "name": "Móveis Imperador",
+    "src": "/clients/moveis-imperador.webp",
+    "w": 152,
+    "h": 140
+  },
+  {
+    "key": "div-design",
+    "name": "Div Design",
+    "src": "/clients/div-design.svg",
+    "w": 357,
+    "h": 215
+  },
+  {
+    "key": "telhadao",
+    "name": "Telhadão & Cia",
+    "src": "/clients/telhadao.webp",
+    "w": 225,
+    "h": 140
+  },
+  {
+    "key": "umani",
+    "name": "Umani Portas",
+    "src": "/clients/umani.webp",
+    "w": 327,
+    "h": 72
+  },
+  {
+    "key": "ss-contabilidade",
+    "name": "Ssousa Contabilidade",
+    "src": "/clients/ss-contabilidade.webp",
+    "w": 121,
+    "h": 140
+  },
+  {
+    "key": "mobinc",
+    "name": "Mobinc",
+    "src": "/clients/mobinc.webp",
+    "w": 231,
+    "h": 72
+  },
+  {
+    "key": "moveis-ponto-moveis",
+    "name": "Móveis ponto móveis",
+    "src": "/clients/moveis-ponto-moveis.webp",
+    "w": 321,
+    "h": 140
+  },
+  {
+    "key": "sdc",
+    "name": "SDC Treinamentos",
+    "src": "/clients/sdc-treinamentos.svg",
+    "w": 849,
+    "h": 76
+  }
+]
