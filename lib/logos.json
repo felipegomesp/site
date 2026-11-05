@@ -3,56 +3,72 @@
     "key": "moveis-imperador",
     "name": "Móveis Imperador",
     "src": "/clients/moveis-imperador.webp",
-    "w": 152,
-    "h": 140
+    "w": 218,
+    "h": 200,
+    "color": "/clients/moveis-imperador-color.webp",
+    "tile": "#ffffff"
   },
   {
     "key": "div-design",
     "name": "Div Design",
     "src": "/clients/div-design.svg",
     "w": 357,
-    "h": 215
+    "h": 215,
+    "color": "/clients/div-design-color.svg",
+    "tile": "#ffffff"
   },
   {
     "key": "telhadao",
     "name": "Telhadão & Cia",
     "src": "/clients/telhadao.webp",
-    "w": 225,
-    "h": 140
+    "w": 258,
+    "h": 160,
+    "color": "/clients/telhadao-color.webp",
+    "tile": "#ffffff"
   },
   {
     "key": "umani",
     "name": "Umani Portas",
     "src": "/clients/umani.webp",
-    "w": 327,
-    "h": 72
+    "w": 381,
+    "h": 84,
+    "color": "/clients/umani-color.webp",
+    "tile": "#ffffff"
   },
   {
     "key": "ss-contabilidade",
     "name": "Ssousa Contabilidade",
     "src": "/clients/ss-contabilidade.webp",
-    "w": 121,
-    "h": 140
+    "w": 173,
+    "h": 200,
+    "color": "/clients/ss-contabilidade-color.webp",
+    "tile": "#ffffff"
   },
   {
     "key": "mobinc",
     "name": "Mobinc",
     "src": "/clients/mobinc.webp",
-    "w": 231,
-    "h": 72
+    "w": 269,
+    "h": 84,
+    "color": null,
+    "tile": null
   },
   {
     "key": "moveis-ponto-moveis",
     "name": "Móveis ponto móveis",
     "src": "/clients/moveis-ponto-moveis.webp",
-    "w": 321,
-    "h": 140
+    "w": 390,
+    "h": 170,
+    "color": "/clients/moveis-ponto-moveis-color.webp",
+    "tile": "#3ac95f"
   },
   {
     "key": "sdc",
     "name": "SDC Treinamentos",
     "src": "/clients/sdc-treinamentos.svg",
     "w": 849,
-    "h": 76
+    "h": 76,
+    "color": null,
+    "tile": "#699331"
   }
 ]

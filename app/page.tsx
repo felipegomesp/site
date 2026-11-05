@@ -346,17 +346,38 @@ export default function Home() {
                   aria-label={dup ? undefined : "Clientes"}
                 >
                   {clientLogos.map((c) => (
-                    <li key={c.key}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={c.src}
-                        alt={dup ? "" : `Logo da ${c.name}`}
-                        width={c.w}
-                        height={c.h}
-                        loading="lazy"
-                        decoding="async"
-                        style={{ height: c.dh, width: "auto" }}
-                      />
+                    <li
+                      key={c.key}
+                      className={c.color ? "has-color" : undefined}
+                      style={{ "--tile": c.tile ?? "transparent" } as React.CSSProperties}
+                    >
+                      <span
+                        className="logo"
+                        style={{ height: c.dh, aspectRatio: `${c.w} / ${c.h}` }}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          className="logo__mono"
+                          src={c.src}
+                          alt={dup ? "" : `Logo da ${c.name}`}
+                          width={c.w}
+                          height={c.h}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        {c.color ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            className="logo__color"
+                            src={c.color}
+                            alt=""
+                            width={c.w}
+                            height={c.h}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : null}
+                      </span>
                     </li>
                   ))}
                 </ul>

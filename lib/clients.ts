@@ -1,16 +1,16 @@
 import logos from "./logos.json";
 
 // Altura de exibição (px) de cada logo na faixa, para equilibrar o peso visual.
-// Os arquivos em /public/clients são versões brancas com fundo transparente.
+// Em /public/clients há a versão branca (padrão) e a colorida (hover).
 const displayHeight: Record<string, number> = {
-  "moveis-imperador": 58,
-  "div-design": 46,
-  telhadao: 54,
-  umani: 30,
-  "ss-contabilidade": 58,
-  mobinc: 32,
-  "moveis-ponto-moveis": 54,
-  sdc: 26,
+  "moveis-imperador": 84,
+  "div-design": 50,
+  telhadao: 62,
+  umani: 34,
+  "ss-contabilidade": 88,
+  mobinc: 36,
+  "moveis-ponto-moveis": 68,
+  sdc: 30,
 };
 
 export type ClientLogo = {
@@ -20,6 +20,10 @@ export type ClientLogo = {
   w: number;
   h: number;
   dh: number;
+  /** Versão colorida original, exibida no hover (null se não houver). */
+  color: string | null;
+  /** Cor de fundo do cartão no hover (null = sem cartão). */
+  tile: string | null;
 };
 
 export const clientLogos: ClientLogo[] = logos.map((l) => ({

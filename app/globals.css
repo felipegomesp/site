@@ -450,15 +450,45 @@ a {
 .marquee__list li {
   display: flex;
   align-items: center;
-  padding-right: clamp(56px, 8vw, 112px);
+  margin-right: clamp(14px, 3vw, 40px);
+  padding: 14px 26px;
+  border-radius: 16px;
+  background: transparent;
+  transition: background-color 0.25s ease;
 }
-.marquee__list img {
+.marquee__list li:hover {
+  background: var(--tile, transparent);
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+.logo {
+  position: relative;
   display: block;
+}
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
   max-width: none;
-  opacity: 0.6;
+  object-fit: contain;
   transition: opacity 0.25s ease;
 }
-.marquee__list li:hover img {
+.logo__mono {
+  opacity: 0.62;
+}
+.marquee__list li:hover .logo__mono {
+  opacity: 1;
+}
+.logo__color {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.marquee__list li.has-color:hover .logo__mono {
+  opacity: 0;
+}
+.marquee__list li.has-color:hover .logo__color {
   opacity: 1;
 }
 @keyframes scroll {
