@@ -1,17 +1,15 @@
 import logos from "./logos.json";
 
-// Altura de exibição (px) de cada logo na faixa, para equilibrar o peso visual.
-// Em /public/clients há a versão branca (padrão) e a colorida (hover).
-const displayHeight: Record<string, number> = {
-  "moveis-imperador": 114,
-  "div-design": 50,
-  telhadao: 62,
-  umani: 34,
-  "ss-contabilidade": 88,
-  mobinc: 36,
-  "moveis-ponto-moveis": 68,
-  sdc: 30,
-};
+// Todas as logos ocupam a mesma "área visual" (equilíbrio de peso), com limites de
+// altura e largura. Em /public/clients há a versão branca (padrão) e a colorida (hover).
+const AREA = 11000;
+const MAX_H = 108;
+const MAX_W = 230;
+
+function displayHeight(w: number, h: number): number {
+  const aspect = w / h;
+  return Math.round(Math.min(Math.sqrt(AREA / aspect), MAX_H, MAX_W / aspect));
+}
 
 export type ClientLogo = {
   key: string;
@@ -28,5 +26,5 @@ export type ClientLogo = {
 
 export const clientLogos: ClientLogo[] = logos.map((l) => ({
   ...l,
-  dh: displayHeight[l.key] ?? 44,
+  dh: displayHeight(l.w, l.h),
 }));
