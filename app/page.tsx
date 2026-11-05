@@ -611,7 +611,7 @@ export default function Home() {
             © {new Date().getFullYear()} {site.legalName}. Todos os direitos
             reservados.
           </p>
-         // <p>CNPJ {site.cnpj}</p>
+          <p>CNPJ {site.cnpj}</p>
         </div>
       </footer>
 
