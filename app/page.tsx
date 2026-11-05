@@ -126,7 +126,7 @@ const jsonLd = {
   email: site.email,
   telephone: site.phoneDisplay,
   image: `${site.url}/opengraph-image`,
-  logo: `${site.url}/icon.svg`,
+  logo: `${site.url}/brand/tipro-icone-app-512.png`,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
@@ -171,13 +171,13 @@ export default function Home() {
 
       <header className="header">
         <div className="header__inner">
-          <a className="logo" href="#inicio" aria-label="T.I Pro, ir para o início">
-            <span className="logo__mark" aria-hidden="true">
-              T
-            </span>
-            <span className="logo__text">
-              T.I <b>Pro</b>
-            </span>
+          <a className="brand" href="#inicio" aria-label="T.I Pro, ir para o início">
+            <img
+              src="/brand/tipro-logo-horizontal-fundo-escuro.svg"
+              alt="T.I Pro"
+              width={127}
+              height={40}
+            />
           </a>
 
           <nav className="pill" aria-label="Principal">
@@ -204,7 +204,7 @@ export default function Home() {
         {/* HERO */}
         <section className="hero" id="inicio" aria-labelledby="hero-titulo">
           <div className="glow glow--blue" aria-hidden="true" />
-          <div className="glow glow--violet" aria-hidden="true" />
+          <div className="glow glow--mint" aria-hidden="true" />
           <div className="container hero__grid">
             <div className="hero__copy">
               <h1 id="hero-titulo" className="hero__title">
@@ -287,8 +287,8 @@ export default function Home() {
                   <svg viewBox="0 0 400 90" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="spark" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stopColor="#8B5CF6" stopOpacity=".38" />
-                        <stop offset="1" stopColor="#8B5CF6" stopOpacity="0" />
+                        <stop offset="0" stopColor="#23BFEF" stopOpacity=".38" />
+                        <stop offset="1" stopColor="#23BFEF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path
@@ -301,7 +301,7 @@ export default function Home() {
                       pathLength={1}
                       d="M0 60 L30 52 L60 58 L90 40 L120 46 L150 30 L180 38 L210 24 L240 34 L270 20 L300 28 L330 16 L360 22 L400 10"
                       fill="none"
-                      stroke="#B794FF"
+                      stroke="#40FFC9"
                       strokeWidth="2.5"
                       strokeLinejoin="round"
                       strokeLinecap="round"
@@ -557,13 +557,13 @@ export default function Home() {
           className={`container footer__grid${site.instagram || site.linkedin ? "" : " footer__grid--3"}`}
         >
           <div>
-            <a className="logo" href="#inicio" aria-label="T.I Pro, voltar ao início">
-              <span className="logo__mark" aria-hidden="true">
-                T
-              </span>
-              <span className="logo__text">
-                T.I <b>Pro</b>
-              </span>
+            <a className="brand" href="#inicio" aria-label="T.I Pro, voltar ao início">
+              <img
+              src="/brand/tipro-logo-horizontal-fundo-escuro.svg"
+              alt="T.I Pro"
+              width={127}
+              height={40}
+            />
             </a>
             <p className="footer__about">
               Suporte de TI, infraestrutura e automação para pequenas e médias

@@ -1,13 +1,12 @@
 :root {
-  --bg: #040711;
-  --bg-alt: #0a1022;
+  --bg: #001319;
+  --bg-alt: #04212b;
   --surface: rgba(255, 255, 255, 0.04);
   --line: rgba(255, 255, 255, 0.09);
-  --blue: #471eff;
-  --blue-2: #2b4dff;
-  --violet: #8b5cf6;
-  --lilac: #b794ff;
-  --magenta: #c30eff;
+  --blue: #08a0d0;
+  --blue-2: #23bfef;
+  --mint: #40ffc9;
+  --ink: #001319;
   --text: #ffffff;
   --muted: #a8b0c8;
   --ok: #34d399;
@@ -62,7 +61,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--lilac);
+  outline: 2px solid var(--mint);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -74,8 +73,8 @@ a {
   z-index: 100;
   padding: 10px 16px;
   border-radius: var(--radius);
-  background: var(--blue);
-  color: #fff;
+  background: var(--blue-2);
+  color: var(--ink);
   font-weight: 600;
 }
 .skip:focus {
@@ -106,24 +105,26 @@ a {
     border-color 0.2s ease;
 }
 .btn--primary {
-  background: linear-gradient(135deg, var(--blue), var(--blue-2));
-  box-shadow: 0 8px 28px -8px rgba(71, 30, 255, 0.7);
+  background: linear-gradient(135deg, var(--blue-2), var(--mint));
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 8px 28px -8px rgba(8, 160, 208, 0.65);
 }
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 34px -8px rgba(99, 70, 255, 0.85);
+  box-shadow: 0 12px 34px -8px rgba(35, 191, 239, 0.8);
 }
 .btn--ghost {
   border-color: rgba(255, 255, 255, 0.28);
   background: rgba(255, 255, 255, 0.03);
 }
 .btn--ghost:hover {
-  border-color: var(--lilac);
-  background: rgba(183, 148, 255, 0.1);
+  border-color: var(--mint);
+  background: rgba(64, 255, 201, 0.08);
 }
 .btn--light {
   background: #fff;
-  color: #1a1466;
+  color: #003846;
   font-weight: 700;
 }
 .btn--light:hover {
@@ -142,7 +143,7 @@ a {
   top: 0;
   z-index: 50;
   padding: 14px 0 10px;
-  background: linear-gradient(to bottom, rgba(4, 7, 17, 0.92), rgba(4, 7, 17, 0));
+  background: linear-gradient(to bottom, rgba(0, 19, 25, 0.92), rgba(0, 19, 25, 0));
 }
 .header__inner {
   width: min(1180px, 100% - 40px);
@@ -152,27 +153,14 @@ a {
   align-items: center;
   gap: 16px;
 }
-.logo {
+.brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
 }
-.logo__mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  font-size: 1.05rem;
-  font-weight: 800;
-}
-.logo__text b {
-  color: var(--lilac);
-  font-weight: 700;
+.brand img {
+  display: block;
+  width: auto;
+  height: 40px;
 }
 .pill {
   justify-self: center;
@@ -181,7 +169,7 @@ a {
   padding: 5px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(10, 16, 34, 0.7);
+  background: rgba(4, 33, 43, 0.72);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -214,14 +202,14 @@ a {
   height: 760px;
   left: -260px;
   top: -140px;
-  background: radial-gradient(closest-side, rgba(71, 30, 255, 0.34), transparent);
+  background: radial-gradient(closest-side, rgba(8, 160, 208, 0.3), transparent);
 }
-.glow--violet {
+.glow--mint {
   width: 720px;
   height: 720px;
   right: -220px;
   bottom: -180px;
-  background: radial-gradient(closest-side, rgba(139, 92, 246, 0.3), transparent);
+  background: radial-gradient(closest-side, rgba(64, 255, 201, 0.13), transparent);
 }
 
 /* ---------- Hero ---------- */
@@ -274,7 +262,7 @@ a {
   width: 18px;
   height: 18px;
   flex: none;
-  color: var(--lilac);
+  color: var(--mint);
 }
 
 .hero__visual {
@@ -286,8 +274,8 @@ a {
 .monitor {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(18, 26, 56, 0.92), rgba(8, 12, 28, 0.94));
-  box-shadow: 0 40px 90px -30px rgba(71, 30, 255, 0.55),
+  background: linear-gradient(180deg, rgba(6, 40, 52, 0.94), rgba(0, 19, 25, 0.96));
+  box-shadow: 0 40px 90px -30px rgba(8, 160, 208, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
@@ -563,7 +551,7 @@ a {
   border-top: 1px solid var(--line);
 }
 .seg dt {
-  color: var(--lilac);
+  color: var(--mint);
   font-weight: 600;
 }
 .about__note {
@@ -596,8 +584,8 @@ a {
 }
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(183, 148, 255, 0.5);
-  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.25), 0 24px 60px -24px rgba(99, 70, 255, 0.65);
+  border-color: rgba(64, 255, 201, 0.45);
+  box-shadow: 0 0 0 1px rgba(64, 255, 201, 0.2), 0 24px 60px -24px rgba(8, 160, 208, 0.6);
 }
 .card__icon {
   display: grid;
@@ -606,8 +594,8 @@ a {
   height: 52px;
   margin-bottom: 22px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(71, 30, 255, 0.35), rgba(139, 92, 246, 0.22));
-  color: var(--lilac);
+  background: linear-gradient(135deg, rgba(8, 160, 208, 0.32), rgba(64, 255, 201, 0.16));
+  color: var(--mint);
 }
 .card__title {
   font-size: 1.25rem;
@@ -646,7 +634,7 @@ a {
   border-top: 2px solid var(--line);
 }
 .step:first-child {
-  border-top-color: var(--lilac);
+  border-top-color: var(--mint);
 }
 .step__n {
   display: grid;
@@ -655,7 +643,8 @@ a {
   height: 40px;
   margin-bottom: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
+  background: linear-gradient(135deg, var(--blue-2), var(--mint));
+  color: var(--ink);
   font-weight: 700;
 }
 .step__title {
@@ -679,7 +668,7 @@ a {
   padding: 30px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(71, 30, 255, 0.1), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(180deg, rgba(8, 160, 208, 0.12), rgba(255, 255, 255, 0.02));
 }
 .case__meta {
   display: flex;
@@ -688,7 +677,7 @@ a {
   margin-bottom: 18px;
 }
 .case__meta b {
-  color: var(--lilac);
+  color: var(--mint);
   font-weight: 600;
 }
 .case__meta span {
@@ -726,7 +715,7 @@ a {
   position: relative;
   margin-top: 24px;
   padding: calc(88px + var(--slant)) 0;
-  background: linear-gradient(120deg, #2b1fd6 0%, var(--blue) 38%, var(--violet) 100%);
+  background: linear-gradient(120deg, #033b4d 0%, #066e92 52%, #0a9cc8 100%);
   clip-path: polygon(0 var(--slant), 100% 0, 100% calc(100% - var(--slant)), 0 100%);
   text-align: center;
 }
