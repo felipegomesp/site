@@ -3,7 +3,7 @@ import logos from "./logos.json";
 // Altura de exibição (px) de cada logo na faixa, para equilibrar o peso visual.
 // Em /public/clients há a versão branca (padrão) e a colorida (hover).
 const displayHeight: Record<string, number> = {
-  "moveis-imperador": 84,
+  "moveis-imperador": 114,
   "div-design": 50,
   telhadao: 62,
   umani: 34,
